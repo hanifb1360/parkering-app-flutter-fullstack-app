@@ -47,4 +47,10 @@ You should see the logging printed in the first terminal:
 2021-05-06T15:47:04.620417  0:00:00.000158 GET     [200] /
 2021-05-06T15:47:08.392928  0:00:00.001216 GET     [200] /echo/I_love_Dart
 ```
+
+
+<!-- dart run build_runner clean -->
+
+<!-- dart run build_runner build -->
+
 <!-- dart run bin/server.dart -->

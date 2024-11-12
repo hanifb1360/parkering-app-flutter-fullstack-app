@@ -3,12 +3,13 @@ import 'package:objectbox/objectbox.dart';
 @Entity()
 class Parking {
   @Id(assignable: true)
-  int id; // ObjectBox ID
+  int id;
 
-  final String vehicleRegNumber; // Registration number of the vehicle parked
-  final String spaceNumber; // Number of the parking space
-  final DateTime startTime; // Time when the vehicle was parked
-  final DateTime? endTime; // Time when the vehicle was removed (optional)
+  String vehicleRegNumber; // Registration number of the vehicle parked
+  String spaceNumber; // Parking space identifier
+  DateTime startTime;
+  DateTime? endTime;
+  double? totalCost; // Optional field to store parking cost
 
   Parking({
     this.id = 0,
@@ -16,6 +17,7 @@ class Parking {
     required this.spaceNumber,
     required this.startTime,
     this.endTime,
+    this.totalCost,
   });
 
   factory Parking.fromJson(Map<String, dynamic> json) {
@@ -25,6 +27,7 @@ class Parking {
       spaceNumber: json['spaceNumber'],
       startTime: DateTime.parse(json['startTime']),
       endTime: json['endTime'] != null ? DateTime.parse(json['endTime']) : null,
+      totalCost: json['totalCost']?.toDouble(),
     );
   }
 
@@ -35,6 +38,7 @@ class Parking {
       'spaceNumber': spaceNumber,
       'startTime': startTime.toIso8601String(),
       'endTime': endTime?.toIso8601String(),
+      'totalCost': totalCost,
     };
   }
 }

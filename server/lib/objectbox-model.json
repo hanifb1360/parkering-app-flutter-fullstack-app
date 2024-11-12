@@ -5,7 +5,7 @@
   "entities": [
     {
       "id": "1:5015027914958512335",
-      "lastPropertyId": "5:5442183871030847053",
+      "lastPropertyId": "6:8568649209440008261",
       "name": "Parking",
       "properties": [
         {
@@ -33,13 +33,18 @@
           "id": "5:5442183871030847053",
           "name": "endTime",
           "type": 10
+        },
+        {
+          "id": "6:8568649209440008261",
+          "name": "totalCost",
+          "type": 8
         }
       ],
       "relations": []
     },
     {
       "id": "2:4647017389975906473",
-      "lastPropertyId": "3:278493858731215231",
+      "lastPropertyId": "4:3574594163616622591",
       "name": "ParkingSpace",
       "properties": [
         {
@@ -57,13 +62,18 @@
           "id": "3:278493858731215231",
           "name": "isOccupied",
           "type": 1
+        },
+        {
+          "id": "4:3574594163616622591",
+          "name": "pricePerHour",
+          "type": 8
         }
       ],
       "relations": []
     },
     {
       "id": "3:6241385207373150112",
-      "lastPropertyId": "5:2103795127447078650",
+      "lastPropertyId": "6:2307935808997364168",
       "name": "Person",
       "properties": [
         {
@@ -86,13 +96,18 @@
           "id": "5:2103795127447078650",
           "name": "personalNumber",
           "type": 9
+        },
+        {
+          "id": "6:2307935808997364168",
+          "name": "password",
+          "type": 9
         }
       ],
       "relations": []
     },
     {
       "id": "4:8338507857970779540",
-      "lastPropertyId": "9:3181834852556311915",
+      "lastPropertyId": "10:3027720193503058588",
       "name": "Vehicle",
       "properties": [
         {
@@ -107,14 +122,14 @@
           "type": 9
         },
         {
-          "id": "7:6513463725459781217",
-          "name": "regNumber",
-          "type": 9
-        },
-        {
           "id": "9:3181834852556311915",
           "name": "ownerId",
           "type": 6
+        },
+        {
+          "id": "10:3027720193503058588",
+          "name": "vehicleRegNumber",
+          "type": 9
         }
       ],
       "relations": []
@@ -136,7 +151,8 @@
     6044305739017911674,
     4508219417058989707,
     2301332534427506108,
-    472190342624737807
+    472190342624737807,
+    6513463725459781217
   ],
   "retiredRelationUids": [],
   "version": 1

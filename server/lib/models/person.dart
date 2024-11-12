@@ -3,17 +3,30 @@ import 'package:objectbox/objectbox.dart';
 @Entity()
 class Person {
   @Id()
-  late int id; // Let ObjectBox auto-assign the ID
+  int id;
 
   String personalNumber;
   String name;
   String email;
+  String password; // Added field for potential authentication
 
   Person({
+    this.id = 0,
     required this.personalNumber,
     required this.name,
     required this.email,
+    required this.password,
   });
+
+  factory Person.fromJson(Map<String, dynamic> json) {
+    return Person(
+      id: json['id'] ?? 0,
+      personalNumber: json['personalNumber'],
+      name: json['name'],
+      email: json['email'],
+      password: json['password'],
+    );
+  }
 
   Map<String, dynamic> toJson() {
     return {
@@ -21,14 +34,7 @@ class Person {
       'personalNumber': personalNumber,
       'name': name,
       'email': email,
+      // We may want to omit password in responses for security reasons.
     };
-  }
-
-  factory Person.fromJson(Map<String, dynamic> json) {
-    return Person(
-      personalNumber: json['personalNumber'],
-      name: json['name'],
-      email: json['email'],
-    )..id = json['id'] ?? 0; // Assign ID only if it exists in the JSON
   }
 }
